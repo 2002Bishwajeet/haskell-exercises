@@ -4,14 +4,20 @@ data BTree = Leaf Int | Branch BTree BTree -- This is a dataType
 
 mintree :: BTree -> BTree
 mintree b = t
-    where
-        (t, m) = mtree b m
-        mtree :: BTree -> Int -> (BTree, Int)
-        mtree (Leaf v) m = (Leaf m, v )
-        mtree (Branch l r) m =
-            let (t1, m1) = mtree l m
-                (tr, mr) = mtree r m
-            in (Branch t1 tr, min m1 mr)
-
+  where
+    (t, m) = mtree b m
+    mtree :: BTree -> Int -> (BTree, Int)
+    mtree (Leaf v) m = (Leaf m, v)
+    mtree (Branch l r) m =
+      let (t1, m1) = mtree l m
+          (tr, mr) = mtree r m
+       in (Branch t1 tr, min m1 mr)
 
 {- Type Classes -}
+
+{- Laziness -}
+
+nat :: [Integer]
+nat = [0 ..]
+
+nat' = 0 : map (+ 1) nat'
