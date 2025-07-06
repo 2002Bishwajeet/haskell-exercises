@@ -1,7 +1,10 @@
-data AVLTree a = Leaf | Branch Int (AVLTree a) a (AVLTree a)
-{- 
+import Text.XHtml (height)
+
+data AVLTree a = Leaf | Branch Int (AVLTree a) a (AVLTree a) deriving (Show, Eq)
+
+{-
     -- Example of an AVL tree in pictorial form:
-    -- 
+    --
     --        3
     --       / \
     --      2   4
@@ -12,4 +15,6 @@ data AVLTree a = Leaf | Branch Int (AVLTree a) a (AVLTree a)
 
  -}
 
- 
+height :: AVLTree a -> Int
+height Leaf = 0
+height (Branch h _ _ _) = h
