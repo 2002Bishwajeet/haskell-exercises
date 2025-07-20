@@ -1,0 +1,25 @@
+cabal-version:      2.0
+name:               fp-exam
+version:            0.1.0.0
+author:             Hannes Saffrich
+maintainer:         saffrich@informatik.uni-freiburg.de
+build-type:         Simple
+
+library
+    -- ghc-options:      -fwarn-incomplete-patterns, -fno-warn-orphans
+    -- ghc-options:      -Wincomplete-patterns, -fno-warn-orphans
+    ghc-options:      -Wall -fno-warn-orphans
+    exposed-modules: 
+      Ex1FunctionsListsRecursion,
+      Ex2HigherOrderFunctions,
+      Ex3LazyEvaluation,
+      Ex4TypeClasses,
+      Ex5Monads,
+      Ex6GADTs,
+      Ex7LambdaCalculus,
+      Ex8GenericProgramming,
+      LibGenerics,
+      LibParser
+    build-depends:    base ^>=4.18.2.1, QuickCheck, mtl, transformers
+    hs-source-dirs:   src
+    default-language: Haskell2010
