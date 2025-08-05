@@ -136,7 +136,7 @@ example = parseExp "((\\x. x) (\\y. y))"
 
 remove :: Eq a => a -> [a] -> [a]
 remove x []              = []
-remove x (y:ys) | x == y =     remove x ys
+remove x (y:ys) | x = = y =     remove x ys
 remove x (y:ys)          = y : remove x ys
 
 free :: Exp -> [Var]
